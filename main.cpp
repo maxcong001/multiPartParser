@@ -52,13 +52,14 @@ int main()
 
     std::string body = "--82ebdd74\r\n"
                        "Content-Type: application/json\r\n\r\n"
-                       "{\"test\":\"test\"}"
+                       "{\"typeAllocationCode\":\"ffffffff\",\"ueRadioCapability5GS\":\"contentID@5gs\",\"supportedFeatures\":\"AAAAA\"}"
                        "\r\n--82ebdd74\r\n"
                        "Content-Type: application/vnd.3gpp.5gnas\r\n"
-                       "Content-Id: n1msg\r\n\r\n"
+                       "Content-Id: contentID@5gs\r\n\r\n"
                        "FFFFFF"
                        "\r\n--82ebdd74--\r\n\r\n";
     init_multipart_parser();
     multipart_parser_.set_boundary("\r\n--82ebdd74");
     parse_multipart(body);
 }
+
